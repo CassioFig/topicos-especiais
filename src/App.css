@@ -1,0 +1,34 @@
+.form-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.select-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.button-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.App {
+    background-color: #256CD6;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
