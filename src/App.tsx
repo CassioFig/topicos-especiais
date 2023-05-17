@@ -1,5 +1,6 @@
 import { Button, Container, Select } from './components';
 import { difficulties } from './data/Difficulty';
+import { QuestionService } from './services';
 import { subjects } from './data/Subject';
 import { useState } from 'react';
 import { areas } from './data';
@@ -21,6 +22,17 @@ function App() {
     else if (data.subject === '') alert('Informe a matéria');
     else if (data.difficulty === '') alert('Informe a dificuldade');
     else if (data.numberOfQuestions === 0) alert('Informe o número de questões');
+    else {
+      const questionService = new QuestionService(
+        data.area,
+        data.subject,
+        data.difficulty,
+        data.numberOfQuestions
+      );
+      
+      questionService.generateQuestions()
+        .then((questions) => console.log(questions))
+    }
   }
 
   return (
