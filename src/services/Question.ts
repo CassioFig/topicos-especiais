@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import { TypeOfQuestions } from "../types";
 
 
 export class QuestionService {
@@ -6,15 +7,17 @@ export class QuestionService {
     private subject: string;
     private difficulty: string;
     private numberOfQuestions: number;
+    private typeOfQuestions: TypeOfQuestions;
     private openAi = new OpenAIApi(new Configuration({
-        apiKey: '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'
+        apiKey: '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'
     }));
     
-    constructor(area: string, subject: string, difficulty: string, numberOfQuestions: number) {
+    constructor(area: string, subject: string, difficulty: string, numberOfQuestions: number, typeOfQuestions: TypeOfQuestions) {
         this.area = area;
         this.subject = subject;
         this.difficulty = difficulty;
         this.numberOfQuestions = numberOfQuestions;
+        this.typeOfQuestions = typeOfQuestions;
     }
 
     public async generateQuestions(): Promise<string[]> {
@@ -29,6 +32,6 @@ export class QuestionService {
     }
 
     private generatePrompt(): string {
-        return `Crie e enumere ${this.numberOfQuestions} questões em português sobre ${this.area} sobre ${this.subject} de dificuldade ${this.difficulty}.`
+        return `Escreva ${this.numberOfQuestions} questões ${this.typeOfQuestions} em português da disciplina ${this.area} do assunto "${this.subject}" com a dificuldade ${this.difficulty}.`
     }
 }
