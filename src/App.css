@@ -24,6 +24,30 @@
     width: 100%;
 }
 
+.presentation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.presentation h1 {
+    font-size: 40px;
+    color: #256CD6;
+    margin-bottom: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.presentation p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+    width: 80%;
+    line-height: 1.5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .App {
     background-color: #256CD6;
     height: 100vh;
