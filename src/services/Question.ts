@@ -9,7 +9,7 @@ export class QuestionService {
     private numberOfQuestions: number;
     private typeOfQuestions: TypeOfQuestions;
     private openAi = new OpenAIApi(new Configuration({
-        apiKey: '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'
+        apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     }));
     
     constructor(area: string, subject: string, difficulty: string, numberOfQuestions: number, typeOfQuestions: TypeOfQuestions) {
